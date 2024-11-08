@@ -1,0 +1,4 @@
+venv/
+venv/*
+.python-version
+/home/useradd/designtemp/.python-version
