@@ -6,6 +6,3 @@ django-widget-tweaks
 awscli
 django-environ
 Psycopg2
-
-
-https://metalbrain-sso-portal.awsapps.com/start
