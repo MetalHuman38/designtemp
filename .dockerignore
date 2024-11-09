@@ -1,0 +1,71 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.docker
+.dockerignore
+
+# Node.js
+node_modules/
+
+# app
+app/__pycache__/
+app/migrations/
+app/staticfiles/
+app/static/
+app/media/
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Exclude Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Exclude virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+.VENV/
+
+# Exclude Django migration files
+*/migrations/
+
+# Exclude local environment settings
+.env
+*.env
+
+# Exclude Docker-related files
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# Exclude other common files
+*.log
+*.sqlite3
+*.db
+
+.git
+.github
+.env
+.venv
+venv/
+.vscode
+.idea
+__pycache__
+node_modules
+.gitignore
+.docker
+
+app/__pycache__
+app/*/__pycache__/
+app/**/*/__pycache__/
+app/*/*/**/__pycache__/
+
+local-cdn/
