@@ -170,15 +170,14 @@ cython_debug/
 .venv
 venv/
 
-app/src/ml-32m/*
-app/src/ml-32m/ratings.csv
-app/src/ml-32m/tags.csv
-app/src/ml-32m/movies.csv
-app/src/ml-32m/links.csv
-
 *.csv
 *.log
 *.xlsx
 *.pkl
 
 local-cdn/
+
+app/theme/static_src/.gitignore
+app/theme/static_src/package-lock.json
+app/theme/static_src/package.json'
+app/theme/static_src/postcss.config.js
