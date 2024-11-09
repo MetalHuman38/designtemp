@@ -1,0 +1,38 @@
+<!-- /resources/templates/uidir/home.html -->
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'favicon.svg' %}" type="image/svg+xml" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{% block title %}MetalBrain{% endblock %}</title>
+    {% tailwind_css %}
+  </head>
+
+  <body class="text-white md:block backdrop-brightness-50">
+    <div class="container mx-auto">
+      <header class="flex items-center justify-between py-4">
+        <a href="{% url 'home' %}" class="text-2xl font-bold">MetalBrain</a>
+        <nav>
+          <ul class="flex space -x-4">
+            <li>
+              <a href="{% url 'home' %}" class="px-4">Home </a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}" class="px-4">About </a>
+            </li>
+            <li>
+              <a href="{% url 'contact' %}" class="px-4">Contact </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>{% block content %} {% endblock %}</main>
+      <footer class="py-4 text-center">
+        <p>&copy; 2021 MetalBrain</p>
+      </footer>
+    </div>
+  </body>
+</html>
