@@ -7,4 +7,3 @@ def home(request):
     """
 
     return render(request, 'uidir/home.html')
-

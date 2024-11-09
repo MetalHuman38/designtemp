@@ -10,4 +10,3 @@ app_name = 'uidir'
 urlpatterns = [
     path('', views.home, name=''),
 ]
-
