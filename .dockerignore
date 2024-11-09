@@ -30,6 +30,8 @@ __pycache__/
 # Exclude virtual environment directories
 venv/
 env/
+designtemp/.env
+.env
 ENV/
 .venv/
 .VENV/
