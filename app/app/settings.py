@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_spectacular',
+    'django_browser_reload',
+    'django_icons',
     'tailwind',
     'theme',
     'uidir',
@@ -47,6 +50,23 @@ INSTALLED_APPS = [
 TAILWIND_APP_NAME = 'theme'
 
 NPM_BIN_PATH = "/home/useradd/.nvm/versions/node/v20.17.0/bin/npm"
+
+DJANGO_ICONS = {
+    "ICONS": {
+        "edit": {"name": "edit-2", "pack": "feather"},
+        "home": {"name": "home", "pack": "fontawesome"},
+        "user": {"name": "user", "pack": "fontawesome"},
+        "post": {"name": "post", "pack": "fontawesome"},
+        "search": {"name": "search", "pack": "fontawesome"},
+        "plus": {"name": "plus", "pack": "fontawesome"},
+        "trash": {"name": "trash", "pack": "feather"},
+        "menu": {"name": "menu", "pack": "feather"},
+        "settings": {"name": "settings", "pack": "feather"},
+        "dropdown-arrow": {"name": "chevron-down", "pack": "feather"},
+        "hamburger": {"name": "menu", "pack": "feather"},
+        "close": {"name": "x", "pack": "feather"},
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,6 +150,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'theme/static_src/images'),
+    os.path.join(BASE_DIR, 'theme/static_src/js'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

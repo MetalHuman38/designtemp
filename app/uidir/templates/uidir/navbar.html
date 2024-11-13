@@ -1,0 +1,51 @@
+<body>
+  <nav
+    class="flex items-center justify-between flex-wrap bg-gray-700"
+    x-data="{ isOpen: false }"
+  >
+    <a href="#">Navbar</a>
+    <button
+      @click="isOpen = !isOpen"
+      class="block text-gray-500 hover:text-white focus:text-white focus:outline-none sm:hidden"
+    >
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path
+          fill-rule="evenodd"
+          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+        />
+      </svg>
+    </button>
+    <div
+      class="sm:flex sm:flex-basis-auto"
+      :class="isOpen ? 'flex-1 flex-grow flex-basis-100' : 'hidden'"
+      @click.away="isOpen = false"
+    >
+      <ul
+        class="flex flex-col sm:flex sm:flex-row"
+        :class="isOpen ? '' : 'hidden'"
+      >
+        <li>
+          <a href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li x-data="{ dropdownOpen: false }">
+          <a href="#" @click="dropdownOpen = !dropdownOpen">Dropdown link</a>
+          <div
+            class="static sm:absolute sm:bg-red-100 float-none"
+            @click.away="dropdownOpen = false"
+            x-show="dropdownOpen"
+          >
+            <a class="block w-full whitespace-nowrap" href="#">Action</a>
+            <a class="block w-full whitespace-nowrap" href="#"
+              >Another action</a
+            >
+            <a class="block w-full whitespace-nowrap" href="#"
+              >Something else here</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>

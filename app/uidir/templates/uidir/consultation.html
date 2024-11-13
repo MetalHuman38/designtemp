@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Load static files-->
+  {% load static %} {% load static tailwind_tags %}
+
+  <!--Load Tailwind-->
+  {% tailwind_css %}
+  <div class="container mx-auto p-8 rounded-lg">
+    <h1 class="text-3xl font-bold mb-4">Request a Consultation</h1>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="post" action="{% url 'uidir:consultation' %}">
+      {% csrf_token %}
+      <div class="mb-4">{{ form.fullname.label_tag }} {{ form.fullname }}</div>
+      <div class="mb-4">{{ form.email.label_tag }} {{ form.email }}</div>
+      <div class="mb-4">
+        {{ form.requirements.label_tag }} {{ form.requirements }}
+      </div>
+      <button
+        type="submit"
+        class="btn bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</html>

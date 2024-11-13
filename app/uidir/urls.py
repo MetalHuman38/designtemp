@@ -9,4 +9,5 @@ app_name = 'uidir'
 
 urlpatterns = [
     path('', views.home, name=''),
+    path('consultation/', views.consultation, name='consultation'),
 ]

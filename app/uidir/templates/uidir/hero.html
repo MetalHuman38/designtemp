@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Hero Section -->
+
+<!--Load Icons-->
+{% load icons %}
+
+<!--Load static files-->
+{% load static %} {% load static tailwind_tags %}
+
+<!--Load Tailwind-->
+{% tailwind_css %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'favicon.svg' %}" type="image/svg+xml" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!--Load Icons-->
+    {% icon 'edit'%}
+
+    <!--Load dropdown icons-->
+    {% icon 'chevron-down' %}
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="{% static 'script.js' %}" defer></script>
+    <title>{% block title %}MetalBrain{% endblock %}</title>
+    <style>
+      html {
+        font-family: "Rubik", sans-serif;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section
+      class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-8 text-white"
+    >
+      <!-- Left Column: Text Content -->
+      <div class="space-y-4 p-8">
+        <h1 class="text-4xl font-bold leading-tight">
+          Top Software <br class="md:hidden" />
+          Development Company
+        </h1>
+        <p class="text-xl text-wrap">
+          Metalbrain brain delivers innovative, scalable, and secure solutions
+          tailored to your business needs.
+        </p>
+        <div class="btn-container">
+          <a href="#" class="btn">Learn More</a>
+        </div>
+        <!--Load consultation form -->
+        {% include "uidir/consultation.html" %}
+      </div>
+      <!-- Right Column: Image or Additional Content -->
+      <div class="flex justify-center">
+        <img
+          src="{% static 'hero.webp' %}"
+          alt="MetalBrain"
+          class="w-[800px] h-auto rounded-lg shadow-lg"
+        />
+      </div>
+    </section>
+    <section class="w-full py-12 px-4">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Our Services</h2>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3>Service 1</h3>
+          <p>Service 1 Description</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3>Service 2</h3>
+          <p>Service 2 Description</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3>Service 3</h3>
+          <p>Service 3 Description</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

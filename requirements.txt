@@ -5,4 +5,5 @@ django-tailwind[reload]
 django-widget-tweaks
 awscli
 django-environ
+django-icons
 Psycopg2

@@ -511,6 +511,61 @@
     @apply rounded-full px-6 py-3 mt-10 text-white font-semibold bg-gradient-to-r from-cyan-500 to-pink-500 shadow-xl transform transition duration-300 ease-in-out hover:scale-105 !important;
   }
 
+  .header {
+    @apply flex justify-between items-center !important;
+  }
+
+  .nav-link-container {
+    @apply flex lg:inline-flex lg:w-auto mt-2 lg:mt-0 gap-4 items-center h3-bold !important;
+  }
+
+  .nav-links {
+    @apply flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 !important;
+  }
+
+  .nav-link {
+    @apply h-12 px-5 p-2 inline-block text-light-1 items-center justify-center rounded-lg gap-2 !important;
+  }
+
+  .nav-link-item {
+    @apply flex items-center justify-center px-4 py-2 text-lg text-white rounded-md hover:bg-gray-900 bg-black !important;
+  }
+
+  .btn-container {
+    @apply flex gap-4 items-center justify-start w-full;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg bg-blue-700 text-white border border-blue-700
+      hover:bg-blue-800;
+  }
+
+  .dropdown {
+    @apply absolute hidden bg-gray-700 mt-2 py-2 rounded shadow-lg !important;
+  }
+
+  .dropdown-link-item {
+    @apply block px-4 py-2 text-sm text-white hover:bg-gray-600 !important;
+  }
+  .hamburger-menu {
+    @apply lg:hidden md:hidden items-center justify-center border h-12 w-12 rounded-md outline-none focus:outline-none cursor-pointer;
+  }
+
+  .x-menu {
+    @apply h-12 w-12 rounded-md outline-none focus:outline-none cursor-pointer;
+  }
+
+  .custom-icon {
+    color: #00b4d8; /* Set your preferred color */
+    font-size: 1.2rem; /* Set your preferred size */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    align-items: justify-center;
+  }
+
+  .custom-icon:hover {
+    color: #0077b6; /* Hover color */
+  }
+
   .shad-button_dark_4 {
     @apply h-12 bg-dark-4 px-5 text-light-1 flex gap-2 !important;
   }

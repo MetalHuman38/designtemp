@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Load tailwind tags -->
+{% load static tailwind_tags %}
+
+<!-- Load static files -->
+{% load static %}
+
+<!-- Load tailwind css -->
+{% tailwind_css %}
+
+<!-- Load icons -->
+{% load icons %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/svg+xml" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{% block title %}MetalBrain{% endblock %}</title>
+  </head>
+
+  <body class="text-white md:block backdrop-brightness-50">
+    <!-- Navbar: Included across all pages -->
+    {% include "uidir/nav.html" %}
+
+    <!-- Main content area for each page -->
+    <main>{% block content %} {% endblock %}</main>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+      <p>&copy; 2024 MetalBrain</p>
+    </footer>
+  </body>
+</html>
