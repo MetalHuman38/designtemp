@@ -2,7 +2,6 @@
 This file is used to define the views for the user app.
 """
 
-from django.shortcuts import render
 from rest_framework import generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
