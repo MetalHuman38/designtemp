@@ -1,0 +1,119 @@
+<!--This template contains owners profile-->
+<!DOCTYPE html>
+<!--Load Icons-->
+{% load icons %}
+
+<!--Load static files-->
+{% load static %}
+
+<!--Load Tailwind-->
+{% load static tailwind_tags %}
+
+<!--Load Tailwind-->
+{% tailwind_css %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Profile Section -->
+    <div class="">{% include 'uidir/nav.html'%}</div>
+    <section class="">
+      <div class="flex items-center justify-center space-y-4 p-8">
+        <h1 class="text-4xl font-bold leading-tight">About Us</h1>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-8 text-white">
+        <div class="space-y-4 p-8">
+          <h1 class="text-4xl font-bold leading-tight">
+            Top Software <br class="md:hidden" />
+            Development Company
+          </h1>
+          <p class="text-xl text-wrap">
+            Metalbrain brain delivers innovative, scalable, and secure solutions
+            to businesses of all sizes. We are a team of experts in software
+            development, design, and testing. Our goal is to provide the best
+            software solutions to our clients.
+          </p>
+          <p class="text-xl text-wrap">
+            We create high-quality software solutions that are tailored to the
+            needs of our clients. Our team of experts is dedicated to providing
+            the best software solutions to our clients. We are committed to
+            delivering innovative, scalable, and secure solutions to businesses
+            of all sizes.
+          </p>
+        </div>
+        <div class="space-y-4 p-8">
+          <h1 class="text-4xl font-bold leading-tight">Our Mission</h1>
+          <p class="text-xl text-wrap">
+            Our mission is to provide the best software solutions to our clients
+            by delivering innovative, scalable, and secure solutions. We are
+            committed to providing the best software solutions to our clients.
+          </p>
+          <p class="text-xl text-wrap">
+            Our work has been recognized by our clients and the industry. We
+            have received numerous awards for our work in software development.
+            Our team of experts is dedicated to providing the best software
+            solutions to our clients.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center space-y-4 p-8">
+        <h1 class="text-4xl font-bold leading-tight">Meet the Team</h1>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-8 text-white">
+        <div class="flex space-y-4 p-8 gap-5">
+          <img
+            src="{% static 'babaaa.jpeg' %}"
+            alt="Babatunde Kalejaiye"
+            class="w-[200px] h-auto rounded-lg shadow-lg"
+          />
+        <div class="space-y-4">
+        <h1 class="text-4xl font-bold leading-tight">Babatunde Kalejaiye</h1>
+        <p class="text-xl text-wrap">
+          Babatunde Kalejaiye is the founder and CEO of Metalbrain Inc. He has
+          over 15 years of experience in software development and has worked
+          with clients from around the world. Babatunde is passionate about
+          creating high-quality software solutions that are tailored to the
+          needs of his clients.
+        </p>
+        <p class="text-xl text-wrap">
+          Babatunde is a graduate of the University of Roehampton, London, where
+          he studied computer science. He has worked with some of the leading
+          companies in the industry and has received numerous awards for his
+          work in software development.
+        </p>
+      </div>
+      </div>
+      <div class="space-y-4 p-8">
+        <h1 class="text-4xl font-bold leading-tight">Jane Doe</h1>
+        <p class="text-xl text-wrap">
+          Jane Doe is the co-founder and CTO of Metalbrain Inc. She has over 15
+          years of experience in software development and has worked with
+          clients from around the world. Jane is passionate about creating
+          innovative software solutions that are tailored to the needs of her
+          clients.
+        </p>
+        <p class="text-xl text-wrap">
+          Jane is a graduate of Stanford University, where she studied computer
+          engineering. She has worked with some of the leading companies in the
+          industry and has received numerous awards for her work in software
+          development.
+        </p>
+      </div>
+    </section>
+    {% include "uidir/footer.html" %}
+  </body>
+</html>

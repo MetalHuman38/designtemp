@@ -66,6 +66,8 @@ node_modules
 .gitignore
 .docker
 
+/home/useradd/designtemp/app/.env
+
 app/__pycache__
 app/*/__pycache__/
 app/**/*/__pycache__/

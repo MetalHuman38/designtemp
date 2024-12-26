@@ -30,9 +30,25 @@ def consultation(request):
             messages.success(
                 request, "Thank you for your consultation request! We'll be in touch soon."
             )
-            return redirect('home')
+            return redirect('uidir:home')
     else:
         form = ConsultationForm()
 
     context = {'form': form}
     return render(request, 'uidir/consultation.html', context)
+
+
+def profile(request):
+    """
+    About page view
+    """
+
+    return render(request, 'uidir/profile.html')
+
+
+def services(request):
+    """
+    Services page view
+    """
+
+    return render(request, 'uidir/services.html')

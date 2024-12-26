@@ -2,6 +2,7 @@
 This module contains tests
 for the models of the core app.
 """
+
 from django.test import TestCase
 from django.utils import timezone
 from uidir import models
@@ -45,7 +46,8 @@ class ConsultationModelTests(TestCase):
         consultation = create_sample_consultation()
         self.assertEqual(consultation.fullname, "Consultation Client")
         self.assertEqual(consultation.email, "client@example.com")
-        self.assertEqual(consultation.requirements, "Consultation requirements")
+        self.assertEqual(consultation.requirements,
+                         "Consultation requirements")
         self.assertTrue(consultation.submitted_at)
 
     def test_missing_required_fields(self):
@@ -56,22 +58,22 @@ class ConsultationModelTests(TestCase):
 
         with self.assertRaises(ValidationError):
             empty_fullname = models.Consultation(
-              fullname="", email="client@example.com",
-              requirements="Some requirements"
-              )
+                fullname="", email="client@example.com",
+                requirements="Some requirements"
+            )
             empty_fullname.full_clean()  # This triggers field validation
 
         with self.assertRaises(ValidationError):
             empty_email = models.Consultation(
-              fullname="Valid Name", email="",
-              requirements="Some requirements")
+                fullname="Valid Name", email="",
+                requirements="Some requirements")
             empty_email.full_clean()
 
         with self.assertRaises(ValidationError):
             empty_requirements = models.Consultation(
-              fullname="Valid Name",
-              email="client@example.com",
-              requirements="")
+                fullname="Valid Name",
+                email="client@example.com",
+                requirements="")
             empty_requirements.full_clean()
 
     def test_email_field_validation(self):
@@ -82,9 +84,9 @@ class ConsultationModelTests(TestCase):
 
         with self.assertRaises(ValidationError):
             invalid_email = models.Consultation(
-              fullname="Valid Name",
-              email="not-an-email",
-              requirements="Some requirements")
+                fullname="Valid Name",
+                email="not-an-email",
+                requirements="Some requirements")
             invalid_email.full_clean()
 
     def test_max_length_fullname(self):
@@ -96,9 +98,9 @@ class ConsultationModelTests(TestCase):
         too_long_name = "A" * 101
         with self.assertRaises(ValidationError):
             long_fullname = models.Consultation(
-              fullname=too_long_name,
-              email="client@example.com",
-              requirements="Some requirements")
+                fullname=too_long_name,
+                email="client@example.com",
+                requirements="Some requirements")
             long_fullname.full_clean()
 
     def test_submitted_at_auto_now_add(self):
@@ -109,4 +111,5 @@ class ConsultationModelTests(TestCase):
 
         consultation = create_sample_consultation()
         self.assertIsNotNone(consultation.submitted_at)
-        self.assertAlmostEqual(consultation.submitted_at, timezone.now(), delta=timezone.timedelta(seconds=1))
+        self.assertAlmostEqual(
+            consultation.submitted_at, timezone.now(), delta=timezone.timedelta(seconds=1))

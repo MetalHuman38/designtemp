@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import environ
+from dotenv import load_dotenv
+
+load_dotenv()
+env = environ.Env()
+environ.Env.read_env()
+
+ENVIRONMENT = env('ENVIRONMENT', default='local')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,13 +46,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_spectacular',
     'django_browser_reload',
     'django_icons',
     'tailwind',
     'theme',
     'uidir',
     'core',
+    'rest_framework',
+    'drf_spectacular',
+    'rest_framework.authtoken',
+    'user',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -65,6 +76,9 @@ DJANGO_ICONS = {
         "dropdown-arrow": {"name": "chevron-down", "pack": "feather"},
         "hamburger": {"name": "menu", "pack": "feather"},
         "close": {"name": "x", "pack": "feather"},
+        "github": {"name": "github", "pack": "fontawesome"},
+        "instagram": {"name": "instagram", "pack": "fontawesome"},
+        "linkedin": {"name": "linkedin", "pack": "fontawesome"},
     },
 }
 
@@ -106,11 +120,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': os.getenv('DB_NAME', 'metalbrain'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASS', 'DB_PASS'),
     }
 }
 
@@ -161,21 +175,28 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'core.User'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_AGE = 1209600
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_NAME = 'metalbrain_sessionid'
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_USE_SESSIONS = True
+CSRF_COOKIE_NAME = 'metalbrain_csrftoken'
+
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-}
 
+}
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'My API',
-    'DESCRIPTION': 'My API description',
-    'VERSION': '1.0.0',
-    'SCHEMA_PATH_PREFIX': '/api/schema',
-    'SERVE_INCLUDE_SCHEMA': False,
-    'SERVE_URLCONF': 'app.urls',
-    'SERVE_VIEW': 'drf_spectacular.views.spectacular_view',
-    'SWAGGER_UI_SETTINGS': {
-        'deepLinking': True,
-        'persistAuthorization': True,
-    },
+    'TITLE': 'Metalbrain API',
     'COMPONENT_SPLIT_REQUEST': True,
 }
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]

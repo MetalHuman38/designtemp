@@ -512,15 +512,19 @@
   }
 
   .header {
-    @apply flex justify-between items-center !important;
+    @apply relative flex items-center justify-between z-10 !important;
   }
 
   .nav-link-container {
-    @apply flex lg:inline-flex lg:w-auto mt-2 lg:mt-0 gap-4 items-center h3-bold !important;
+    @apply flex flex-col sm:flex lg:flex-row items-center justify-between gap-4 h3-bold w-full !important;
   }
 
   .nav-links {
-    @apply flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 !important;
+    @apply flex flex-col items-center justify-center space-y-6 lg:flex-row lg:space-y-0 lg:space-x-6 !important;
+  }
+
+  .nav-links a {
+    @apply px-4 py-2 rounded-md hover:bg-gray-800 hover:text-white !important;
   }
 
   .nav-link {
@@ -528,7 +532,7 @@
   }
 
   .nav-link-item {
-    @apply flex items-center justify-center px-4 py-2 text-lg text-white rounded-md hover:bg-gray-900 bg-black !important;
+    @apply flex items-center justify-center px-4 py-2 text-lg lg:text-base text-white rounded-md hover:bg-gray-900 bg-black !important;
   }
 
   .btn-container {
@@ -544,15 +548,30 @@
     @apply absolute hidden bg-gray-700 mt-2 py-2 rounded shadow-lg !important;
   }
 
-  .dropdown-link-item {
-    @apply block px-4 py-2 text-sm text-white hover:bg-gray-600 !important;
+  .dropdown-link-container {
+    @apply flex flex-col gap-2 items-center justify-center !important;
   }
+
+  .dropdown-link-item {
+    @apply block px-4 py-2 base-semibold text-light-3 underline hover:bg-gray-900 !important;
+  }
+
+  .dropdown-link-item:hover {
+    @apply bg-gray-900 !important;
+  }
+
+  @media (max-width: 1024px) {
+    .dropdown-item {
+      @apply hidden !important; /* Always hidden on mobile */
+    }
+  }
+
   .hamburger-menu {
-    @apply lg:hidden md:hidden items-center justify-center border h-12 w-12 rounded-md outline-none focus:outline-none cursor-pointer;
+    @apply lg:hidden md:hidden sm:hidden items-center justify-center border h-12 w-12 gap-16 rounded-md outline-none focus:outline-none cursor-pointer;
   }
 
   .x-menu {
-    @apply h-12 w-12 rounded-md outline-none focus:outline-none cursor-pointer;
+    @apply h-12 w-12 top-4 right-4 border rounded-md outline-none focus:outline-none cursor-pointer;
   }
 
   .custom-icon {

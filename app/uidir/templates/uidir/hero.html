@@ -5,7 +5,10 @@
 {% load icons %}
 
 <!--Load static files-->
-{% load static %} {% load static tailwind_tags %}
+{% load static %}
+
+<!--Load Tailwind-->
+{% load static tailwind_tags %}
 
 <!--Load Tailwind-->
 {% tailwind_css %}
@@ -73,15 +76,28 @@
       </div>
     </section>
     <section class="w-full py-12 px-4">
-      <h2 class="text-3xl font-semibold mb-4 text-center">Our Services</h2>
+      <h2 class="text-3xl font-semibold mb-4 text-center">Projects</h2>
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3>Service 1</h3>
-          <p>Service 1 Description</p>
+          <h3 class="h3-bold p-2">
+            Image Classification with Machine Learning
+          </h3>
+          <p>
+            Developed an image classification system using a Convolutional
+            Neural Network (CNN) trained on the CelebA dataset. The model
+            achieves high accuracy in recognizing attributes like gender, age,
+            and facial expressions. Tools and libraries include TensorFlow,
+            Python, and OpenCV.
+          </p>
         </div>
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3>Service 2</h3>
-          <p>Service 2 Description</p>
+          <h3 class="h3-bold p-2">Movie Recommendation System</h3>
+          <p>
+            Built a personalized movie recommendation system using Django and
+            Python, leveraging machine learning to suggest films based on user
+            preferences. Features include dynamic suggestions and a
+            user-friendly interface.
+          </p>
         </div>
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <h3>Service 3</h3>

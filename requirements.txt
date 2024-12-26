@@ -7,3 +7,4 @@ awscli
 django-environ
 django-icons
 Psycopg2
+python-dotenv

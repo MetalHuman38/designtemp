@@ -8,6 +8,9 @@ from . import views
 app_name = 'uidir'
 
 urlpatterns = [
-    path('', views.home, name=''),
+    path('', views.home, name='home'),
     path('consultation/', views.consultation, name='consultation'),
+    path('profile/', views.profile, name='profile'),
+    path('home/', views.home, name='home'),
+    path('services/', views.services, name='services'),
 ]
