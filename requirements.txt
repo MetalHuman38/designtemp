@@ -8,3 +8,4 @@ django-environ
 django-icons
 Psycopg2
 python-dotenv
+uwsgi>=2.0.28,<2.1

@@ -36,11 +36,21 @@
     <!-- Main content area for each page -->
     <main>
       {% block content %}
+      <div class="container space-y-4 text-slate-400 p-8">
+        <p class="text-2xl font-semibold leading-tight">
+          We provide full stack development services and technical leadership
+          for businesses, projects and people.
+        </p>
+      </div>
       <section
         class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full p-8 text-white"
       >
         <div class="space-y-4 p-8">
-          <h1 class="text-4xl font-bold leading-tight">What we do</h1>
+          <h1
+            class="text-4xl font-bold leading-tight text-fuchsia-600 text-wrap shadow-md hover:saturate-200"
+          >
+            CORE SERVICES
+          </h1>
           <p class="text-xl text-wrap">
             We offer a wide range of services to our clients. Our team of
             experts is dedicated to providing the best software solutions to our
@@ -55,7 +65,11 @@
           </p>
         </div>
         <div class="space-y-4 p-8">
-          <h1 class="text-4xl font-bold leading-tight">Our Process</h1>
+          <h1
+            class="text-4xl font-bold leading-tight text-fuchsia-600 text-wrap shadow-md hover:saturate-200"
+          >
+            OUR PROCESS
+          </h1>
           <p class="text-xl text-wrap">
             Our process is designed to deliver the best software solutions to
             our clients. We work closely with our clients to understand their
@@ -71,6 +85,49 @@
             our clients.
           </p>
         </div>
+        <div class="space-y-4 p-8">
+          <h1
+            class="text-4xl font-bold leading-tight text-fuchsia-600 text-wrap shadow-md hover:saturate-200"
+          >
+            WHO WE WORK WITH
+          </h1>
+          <p class="text-xl text-wrap">
+            We work with businesses of all sizes, from startups to large
+            enterprises. Our team of experts is dedicated to providing the best
+            software solutions to our clients. We are committed to delivering
+            innovative, scalable, and secure solutions to businesses of all
+            sizes.
+          </p>
+          <p class="text-xl text-wrap">
+            Our team of experts is dedicated to providing the best software
+            solutions to our clients. We are committed to delivering innovative,
+            scalable, and secure solutions to businesses of all sizes. We create
+            high-quality software solutions that are tailored to the needs of
+            our clients.
+          </p>
+        </div>
+        <div class="space-y-4 p-8">
+          <h1
+            class="text-4xl font-bold leading-tight text-fuchsia-600 text-wrap shadow-md hover:saturate-200"
+          >
+            HOW WE WORK
+          </h1>
+          <p class="text-xl text-wrap">
+            We work closely with our clients to understand their needs and
+            requirements. We create a detailed plan that outlines the scope of
+            the project, the timeline, and the budget. We then develop the
+            software solution, test it, and deliver it to our clients.
+          </p>
+          <p class="text-xl text-wrap">
+            Our team of experts is dedicated to providing the best software
+            solutions to our clients. We are committed to delivering innovative,
+            scalable, and secure solutions to businesses of all sizes. We create
+            high-quality software solutions that are tailored to the needs of
+            our clients.
+          </p>
+        </div>
+        <!--Contact Form-->
+        {% include "uidir/contact.html" %}
       </section>
       {% include "uidir/footer.html" %} {% endblock %}
     </main>

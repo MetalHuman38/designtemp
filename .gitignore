@@ -172,6 +172,7 @@ cython_debug/
 .env
 .venv
 venv/
+.env.sample
 
 *.csv
 *.log

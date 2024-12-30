@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Load static files -->
+  {% load static %}
+
+  <!-- Load Tailwind -->
+  {% load static tailwind_tags %}
+
+  <!-- Load Tailwind -->
+  {% tailwind_css %}
+
+  <div class="container mx-auto p-8 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-fuchsia-600 mb-4">Contact Us</h1>
+    <p class="text-lg mb-4">
+      If you have any questions or would like to learn more about our services,
+      please contact us using the form below. We look forward to hearing from
+      you.
+    </p>
+
+    {% if messages %}
+    <ul class="messages text-green-600">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form method="post" action="{% url 'uidir:contact' %}">
+      {% csrf_token %}
+      <div class="mb-4">{{ form.fullname.label_tag }} {{ form.fullname }}</div>
+      <div class="mb-4">{{ form.email.label_tag }} {{ form.email }}</div>
+      <div class="mb-4">{{ form.message.label_tag }} {{ form.message }}</div>
+      <button
+        type="submit"
+        class="btn bg-fuchsia-600 text-white px-4 py-2 rounded hover:bg-fuchsia-700"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</html>
