@@ -176,6 +176,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'theme/static_src/images'),
     os.path.join(BASE_DIR, 'theme/static_src/js'),
     os.path.join(BASE_DIR, 'theme/static'),
+    os.path.join(BASE_DIR, 'theme/static/css'),
 ]
 
 # Default primary key field type
