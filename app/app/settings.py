@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'djangokey')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'metalbrain.net']
 ALLOWED_HOSTS.extend(
     filter(None, os.environ.get('ALLOWED_HOSTS', '').split(','))
 )
