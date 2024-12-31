@@ -4,6 +4,7 @@ server {
 
    location /static {
      alias /vol/web/static;
+     add_header Cross-Origin-Opener-Policy same-origin;
    }
 
     location / {

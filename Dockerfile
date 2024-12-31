@@ -15,6 +15,17 @@ RUN apk add --update --no-cache nodejs npm
 # Upgrade npm to the latest version
 RUN npm install -g npm@latest
 
+WORKDIR /app/theme/static_src
+
+# Install TailwindCSS and other Node.js dependencies
+RUN npm install
+
+# Build TailwindCSS for production
+RUN npm run build
+
+# Reset working directory for Django
+WORKDIR /app
+
 RUN python -m venv /py && \
   /py/bin/pip install --upgrade pip && \
   apk add --update --no-cache postgresql-client && \
