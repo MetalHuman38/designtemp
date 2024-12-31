@@ -1,5 +1,6 @@
 server {
    listen ${LISTEN_PORT};
+   server_name metalbrain.net www.metalbrain.net;
 
    location /static {
      alias /vol/web/static;
