@@ -4,6 +4,7 @@ services:
       context: .
     restart: always
     volumes:
+      - ./app:/app
       - static-data:/vol/web
     environment:
       - DB_HOST=db
