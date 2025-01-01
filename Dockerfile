@@ -1,3 +1,16 @@
+# Stage 1: Use Node.js for building TailwindCSS
+FROM node:20 AS node-build
+
+WORKDIR /app/theme/static_src
+
+# Copy the necessary files for TailwindCSS
+COPY ./app/theme/static_src/package*.json ./
+COPY ./app/theme/static_src ./
+
+# Install dependencies and build TailwindCSS
+RUN npm install
+RUN npm run build
+
 FROM python:3.9-alpine3.13
 LABEL maintainer="metalbrain.net"
 
@@ -12,9 +25,9 @@ EXPOSE 3000
 ARG DEV=true
 
 
-RUN apk add --update --no-cache nodejs npm
+# RUN apk add --update --no-cache nodejs npm
 # Upgrade npm to the latest version
-RUN npm install -g npm@latest
+# RUN npm install -g npm@latest
 
 RUN python -m venv /py && \
   /py/bin/pip install --upgrade pip && \

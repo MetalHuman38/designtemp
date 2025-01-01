@@ -175,7 +175,6 @@ STATIC_ROOT = '/vol/web/static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'theme/static_src/images'),
     os.path.join(BASE_DIR, 'theme/static_src/js'),
-    os.path.join(BASE_DIR, 'theme/static'),
 ]
 
 # Default primary key field type
