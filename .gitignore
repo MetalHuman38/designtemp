@@ -181,6 +181,6 @@ venv/
 local-cdn/
 
 app/theme/static_src/.gitignore
-app/theme/static_src/package-lock.json
-app/theme/static_src/package.json'
-app/theme/static_src/postcss.config.js
+# app/theme/static_src/package-lock.json
+# app/theme/static_src/package.json'
+# app/theme/static_src/postcss.config.js
