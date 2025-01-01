@@ -5,12 +5,23 @@ WORKDIR /app/theme/static_src
 
 # Copy the necessary files for TailwindCSS
 COPY ./app/theme/static_src/package*.json ./
+RUN echo "Checking copied package files:" && ls -l ./ && cat package.json
+
 COPY ./app/theme/static_src ./
+RUN echo "Checking copied source files:" && ls -R ./src
 
-# Install dependencies and build TailwindCSS
-RUN npm install
-RUN npm run build
+# Install dependencies and log the process
+RUN echo "Installing Node.js dependencies..." && \
+  npm install && \
+  echo "Dependencies installed successfully."
 
+# Run the build process and log outputs
+RUN echo "Building TailwindCSS assets..." && \
+  npm run build --loglevel verbose && \
+  echo "Build completed successfully. Checking output files:" && \
+  ls -l /app/theme/static/css/dist
+
+# Stage 2: Use Python for the Django app
 FROM python:3.9-alpine3.13
 LABEL maintainer="metalbrain.net"
 
@@ -19,6 +30,9 @@ COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./scripts /scripts
 COPY ./app /app
 WORKDIR /app
+
+# Copy built static files from node-build stage
+COPY --from=node-build /app/theme/static /app/theme/static
 
 EXPOSE 3000
 

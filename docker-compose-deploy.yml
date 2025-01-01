@@ -12,6 +12,10 @@ services:
       - DB_PASS=${DB_PASS}
       - SECRET_KEY=${DJANGO_SECRET_KEY}
       - ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS}
+      - STATIC_URL=/static/
+      - MEDIA_URL=/static/media/
+      - STATIC_ROOT=/vol/web/static
+      - MEDIA_ROOT=/vol/web/media
     depends_on:
       - db
 
