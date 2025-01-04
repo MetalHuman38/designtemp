@@ -1,5 +1,6 @@
 server {
    listen ${LISTEN_PORT};
+   server_name ec2-52-207-221-173.compute-1.amazonaws.com;
 
    location /static {
      alias /vol/web/static;
