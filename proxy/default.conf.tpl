@@ -1,10 +1,9 @@
 server {
    listen ${LISTEN_PORT};
-   server_name ec2-52-207-221-173.compute-1.amazonaws.com;
+   server_name metalbrains.net;
 
    location /static {
      alias /vol/web/static;
-     add_header Cross-Origin-Opener-Policy same-origin;
    }
 
     location / {
