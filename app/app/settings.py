@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'djangokey')
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'metalbrain.net',
-                 'ec2-52-207-221-173.compute-1.amazonaws.com', 'metalbrains.net']
+                 'metalbrains.net']
 ALLOWED_HOSTS.extend(
     filter(None, os.environ.get('ALLOWED_HOSTS', '').split(','))
 )
@@ -197,7 +197,7 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_USE_SESSIONS = True
 CSRF_COOKIE_NAME = 'metalbrain_csrftoken'
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = True
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
